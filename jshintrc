@@ -1,0 +1,30 @@
+{
+  "multistr": true, // allow multiline strings if they are escaped correctly
+  "curly": true,    // require curly braces around conditionals and loops
+  "eqeqeq": true,   // require '===' and '!=='
+  "freeze": true,   // Prevent overwriting native prototypes
+  "immed": true,    // Require immediate function invocation to be wrapped in parentheses
+  "indent": 2,      // require 2 space indentation
+  "latedef": true,  // prevent using variables before declaring them with `var`
+  "noarg": true,    // Prevent use of `arguments.callee` or `arguments.caller`
+  "nonew": true,    // Prevent calling a constructor without assigning the result
+  "undef": true,    // Prevents using variables that have not been declared or assigned
+  "unused": true,   // Notify if a variable was declared but never used
+  "strict": true,   // Require 'use strict' at the top of functions
+  "jquery": true,
+  "browser": true,
+  "globals": {
+    "_": true,
+    "Backbone": true,
+
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "beforeEach": true,
+    "afterEach": true,
+
+    "Ember": true,
+
+    "I18n": true
+  }
+}
