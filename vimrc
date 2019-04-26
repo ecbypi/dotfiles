@@ -86,6 +86,8 @@ Plugin 'rking/ag.vim'
 "
 " Get `.` to support plugin maps
 Plugin 'tpope/vim-repeat'
+" Split by lines
+Plugin 'AndrewRadev/splitjoin.vim'
 
 " Editing macros
 "
@@ -211,6 +213,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Use `vim-dispatch for rspec. Use `respec` to only re-run failed specs
 let g:rspec_command = 'Dispatch respec {spec}'
+
+" Don't use curly braces when splitting a ruby hash into multiple lines
+let g:splitjoin_ruby_curly_braces = 0
 
 " Use comma for camelcasemotion
 call camelcasemotion#CreateMotionMappings(',')
