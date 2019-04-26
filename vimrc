@@ -211,8 +211,8 @@ let g:syntastic_check_on_open=1
 " enable syntastic for eslint
 let g:syntastic_javascript_checkers = ['eslint']
 
-" Use `vim-dispatch for rspec. Use `respec` to only re-run failed specs
-let g:rspec_command = 'Dispatch respec {spec}'
+" Use `vim-dispatch for rspec.
+let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
 
 " Don't use curly braces when splitting a ruby hash into multiple lines
 let g:splitjoin_ruby_curly_braces = 0
