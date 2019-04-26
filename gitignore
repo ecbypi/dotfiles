@@ -11,3 +11,4 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 .respec_failures
+.byebug_history
