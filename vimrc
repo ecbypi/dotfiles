@@ -57,74 +57,74 @@ endif
 "" Plugins
 "
 " Load plugins using vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'pbrisbin/vim-mkdir'
-Plugin 'thoughtbot/vim-rspec'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'thoughtbot/vim-rspec'
 
 " Shell interaction
 "
 " Running bundler commands
-Plugin 'tpope/vim-bundler'
+Plug 'tpope/vim-bundler'
 " File management
-Plugin 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 " Git commands
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " handles opening sending commands to tmux panes, used by thoughtbot/vim-rspec
-Plugin 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 " Searching through files using `ag`
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 
 " Extensions
 "
 " Get `.` to support plugin maps
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 " Split by lines
-Plugin 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Editing macros
 "
 " Replacing / removing surrounding characters (parens, quotes, etc)
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Modifiers to move within camel-cased or snake-cased words
-Plugin 'bkad/CamelCaseMotion'
+Plug 'bkad/CamelCaseMotion'
 " Easily align things with mappings recommended by tl;dr in README
-Plugin 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 " Configurable tab completion. Defaults to switching <Tab> and <Shift-Tab> to
 " replicate <Ctrl-p> and <Ctrl-n> respectively in insert mode.
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 
 " UI
 "
 " Better statusline
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 " Solarized color scheme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " Syntax highlighting / language support
 "
 " TODO: using this resulted in undesirable syntax highlighting in ruby.
 " Investigate and fix.
 " Bundle 'sheerun/vim-polyglot'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'heartsentwined/vim-emblem'
-Plugin 'nono/vim-handlebars'
-Plugin 'rodjek/vim-puppet'
-Plugin 'pangloss/vim-javascript'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
+Plug 'kchmck/vim-coffee-script'
+Plug 'heartsentwined/vim-emblem'
+Plug 'nono/vim-handlebars'
+Plug 'rodjek/vim-puppet'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 " Adding closing syntax (`end`, in ruby, `endfunction` in vimscript, etc)
-Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/syntastic'
+Plug 'tpope/vim-endwise'
+Plug 'scrooloose/syntastic'
+" Plug 'w0rp/ale'
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+Plug 'leshill/vim-json'
+Plug 'wgwoods/vim-systemd-syntax'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 augroup vimrcEx
