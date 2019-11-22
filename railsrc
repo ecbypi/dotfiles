@@ -1,3 +1,7 @@
 --skip-test
+--skip-puma
+--skip-spring
+--skip-turbolinks
+--skip-actioncable
+
 -d postgresql
---skip-bundle
