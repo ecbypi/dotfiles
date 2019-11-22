@@ -63,3 +63,31 @@ export PATH=".git/safe/../../bin:$PATH"
 
 # Put homebrew as early as possible in the path
 export PATH="/usr/local/bin:$PATH"
+
+function tmux-init {
+  if [ $TMUX ]; then
+    echo "Already in a tmux session"
+  fi
+
+  projects_root="${HOME}/Work"
+  project_name="$1"
+  project_directory="${projects_root}/${project_name}"
+
+  if [ -d "$project_directory" ]; then
+
+    cd "$project_directory"
+
+    tmux start-server
+
+    tmux new-session -d -n vim -s "$project_name"
+    tmux send-keys -t "${project_name}:1" 'vim' C-m
+    tmux new-window -t "${project_name}:2" -n git
+
+    cd -
+
+    tmux select-window -t "${project_name}:1"
+    tmux attach-session -d -t "${project_name}"
+  else
+    echo "${project_directory} does not exist!"
+  fi
+}
