@@ -154,6 +154,8 @@ augroup vimrcEx
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
+
+  autocmd BufRead,BufNewFile *.py setlocal tabstop=4 shiftwidth=4 autoindent
 augroup END
 
 "" Whitespace handling
@@ -210,6 +212,14 @@ let g:html_indent_tags = 'li\|p'
 let g:syntastic_check_on_open=1
 " enable syntastic for eslint
 let g:syntastic_javascript_checkers = ['eslint']
+" use pep8 for pythonk
+let g:syntastic_python_checkers = ['pep8']
+" Ignore:
+" * E501: line too long
+" * E402: all imports at the top of the file; sometimes code is run to
+" * modify the load path to load code local to the current project.
+" * E302, E305: extra blank lines between function and class definitions
+let g:syntastic_python_pep8_args='--ignore=E501,E402,E302,E305'
 
 " Use `vim-dispatch for rspec.
 let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
