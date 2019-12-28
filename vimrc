@@ -124,6 +124,9 @@ Plug 'mattn/emmet-vim'
 Plug 'leshill/vim-json'
 Plug 'wgwoods/vim-systemd-syntax'
 
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 call plug#end()
 filetype plugin indent on
 
