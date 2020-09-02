@@ -233,7 +233,7 @@ let g:html_indent_tags = 'li\|p'
 let g:syntastic_check_on_open=1
 " enable syntastic for eslint
 let g:syntastic_javascript_checkers = ['eslint']
-" use pep8 for pythonk
+" use pep8 for python
 let g:syntastic_python_checkers = ['pep8']
 " Ignore:
 " * E501: line too long
