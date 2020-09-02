@@ -73,8 +73,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'ctrlpvim/ctrlp.vim'
 " Create missing directories when writing a file
 Plug 'pbrisbin/vim-mkdir'
-" Run rspec tests from within vim
-Plug 'thoughtbot/vim-rspec'
 
 " Shell interaction
 "
@@ -88,6 +86,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 " Searching through files using `ag`
 Plug 'rking/ag.vim'
+" Test runner for everything
+Plug 'janko/vim-test'
 
 " Extensions
 "
@@ -236,8 +236,8 @@ let g:syntastic_python_checkers = ['pep8']
 " * E302, E305: extra blank lines between function and class definitions
 let g:syntastic_python_pep8_args='--ignore=E501,E402,E302,E305'
 
-" Use `vim-dispatch for rspec.
-let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
+" Configure vim-test
+let test#strategy = "dispatch"
 
 " Don't use curly braces when splitting a ruby hash into multiple lines
 let g:splitjoin_ruby_curly_braces = 0
@@ -273,11 +273,12 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
+" vim-test mappings
+nnoremap <Leader>s :TestNearest<CR>
+nnoremap <Leader>t :TestFile<CR>
+nnoremap <Leader>a :TestSuite<CR>
+nnoremap <Leader>l :TestLast<CR>
+nnoremap <Leader>g :TestVisit<CR>
 
 " Add `jk` and `jj` to exit out of insert mode (also while accidentally pressing `<shift>`
 inoremap jk <Esc>
