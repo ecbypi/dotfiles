@@ -135,6 +135,7 @@ Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 Plug 'leshill/vim-json'
 Plug 'wgwoods/vim-systemd-syntax'
+Plug 'vim-scripts/indentpython.vim'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
