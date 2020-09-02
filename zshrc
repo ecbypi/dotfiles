@@ -70,6 +70,10 @@ if [ -d "$HOME/.pyenv" ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+if [ -d "$HOME/.pgvm" ]; then
+  source $HOME/.pgvm/pgvm_env
+fi
+
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
 
