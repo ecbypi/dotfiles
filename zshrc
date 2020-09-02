@@ -52,17 +52,17 @@ bindkey "^N" insert-last-word
 # aliases
 source ~/.aliases
 
+# Put homebrew as early as possible in the path
+PATH="/usr/local/bin:$PATH"
+
 # load rbenv if available
 if [ -d "$HOME/.rbenv" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init - --no-rehash)"
 fi
 
 # mkdir .git/safe in the root of repositories you trust
-export PATH=".git/safe/../../bin:$PATH"
-
-# Put homebrew as early as possible in the path
-export PATH="/usr/local/bin:$PATH"
+PATH=".git/safe/../../bin:$PATH"
 
 function tmux-init {
   if [ $TMUX ]; then
@@ -91,3 +91,7 @@ function tmux-init {
     echo "${project_directory} does not exist!"
   fi
 }
+
+typeset -U PATH
+
+export PATH
