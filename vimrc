@@ -248,6 +248,16 @@ let test#strategy = "dispatch"
 " Don't use curly braces when splitting a ruby hash into multiple lines
 let g:splitjoin_ruby_curly_braces = 0
 
+" Define custom vim-rails mappings
+let g:rails_projections = {
+\  "app/javascript/*.js": {
+\    "command": "js"
+\  },
+\  "app/presenters/*.rb": {
+\    "command": "presenter"
+\  }
+\}
+
 " Use comma for camelcasemotion
 call camelcasemotion#CreateMotionMappings(',')
 
