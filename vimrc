@@ -158,8 +158,10 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-  " Enable spellchecking for Markdown
+  " Enable spellchecking for Markdown and HTML
   autocmd FileType markdown setlocal spell
+  autocmd FileType haml setlocal spell
+  autocmd FileType html setlocal spell
 
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
