@@ -61,6 +61,15 @@ if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init - --no-rehash)"
 fi
 
+if [ -d "$HOME/.pyenv" ]; then
+  PATH="$HOME/.pyenv/bin:$PATH"
+
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
 
