@@ -1,4 +1,3 @@
---skip-test
 --skip-puma
 --skip-spring
 --skip-turbolinks
