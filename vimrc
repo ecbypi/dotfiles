@@ -67,9 +67,13 @@ endif
 " Load plugins using vundle
 call plug#begin('~/.vim/bundle')
 
-" Define bundles via Github repos
+" Utilities
+"
+" Fuzzy-finder
 Plug 'ctrlpvim/ctrlp.vim'
+" Create missing directories when writing a file
 Plug 'pbrisbin/vim-mkdir'
+" Run rspec tests from within vim
 Plug 'thoughtbot/vim-rspec'
 
 " Shell interaction
