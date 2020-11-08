@@ -50,6 +50,7 @@ set formatoptions+=vr
 
 " Always have spell-checking on
 set spell
+set spellfile=~/.vimspell.utf8.add
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
