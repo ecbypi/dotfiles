@@ -244,6 +244,8 @@ let g:syntastic_python_checkers = ['pep8']
 " * modify the load path to load code local to the current project.
 " * E302, E305: extra blank lines between function and class definitions
 let g:syntastic_python_pep8_args='--ignore=E501,E402,E302,E305'
+" Use HTML5
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 " Configure vim-test
 let test#strategy = "dispatch"
