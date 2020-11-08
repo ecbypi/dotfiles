@@ -323,3 +323,4 @@ iabbrev complicant compliant
 "" UI
 set background=dark
 colorscheme solarized
+highlight Comment ctermfg=Magenta
