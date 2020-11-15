@@ -1,3 +1,4 @@
+export LANG=en_US.UTF-8
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
