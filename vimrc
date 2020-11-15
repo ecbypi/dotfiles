@@ -32,6 +32,7 @@ set splitbelow
 set splitright
 
 " Always use vertical diffs
+set diffopt-=internal
 set diffopt+=vertical
 
 " Softtabs, 2 spaces
