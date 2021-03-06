@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+set -o nounset
+set -o errexit
+set -o pipefail
+
+EXCLUDES=("README.md install")
+
+# FIXME?: Support running from directories
+dotfiles_repo=`pwd`
+
+for dotfile in *; do
+  if [[ ! " ${EXCLUDES[@]} " =~ " ${dotfile} " ]]; then
+    source="$dotfiles_repo/$dotfile"
+    destination="$HOME/.$dotfile"
+
+    printf "Linking %s to %s\n" $source $destination
+
+    ln -s $source $destination
+  fi
+done
