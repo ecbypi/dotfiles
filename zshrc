@@ -112,3 +112,6 @@ function tmux-init {
 typeset -U PATH
 
 export PATH
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_AUTO_UPGRADE=1
