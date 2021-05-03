@@ -282,7 +282,7 @@ inoremap <C-h> <Esc>:tabprevious<Cr>
 inoremap <C-l> <Esc>:tabnext<Cr>
 
 " Mappings to open and source .vimrc
-nnoremap <Leader>ev :vsplit $MYVIMRC<Cr>
+nnoremap <Leader>ev :vsplit $HOME/.vimrc<Cr>
 nnoremap <Leader>sv :source $MYVIMRC<Cr>
 
 " Force using `h` and `l` for navigating
