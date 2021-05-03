@@ -1,15 +1,24 @@
+# OS stuff
 .DS_Store
 *.sw[nop]
-.bundle
-.env
-.powenv
-db/*.sqlite3
+
+# Generics
 log/*.log
-rerun.txt
+.env
+tmp/**/*
 tags
 !tags/
-tmp/**/*
-!tmp/cache/.keep
-.respec_failures
+
+# Ruby stuff
+.bundle
 .byebug_history
-storage/*
+
+# Rails
+!tmp/cache/.keep
+db/*.sqlite3
+storage
+.powenv
+
+# Ansible
+credstash.log
+*.pyc
