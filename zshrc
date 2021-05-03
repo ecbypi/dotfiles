@@ -67,8 +67,11 @@ if [ -d "$HOME/.pyenv" ]; then
 
   export PYENV_ROOT="$HOME/.pyenv"
   export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+
+  if command -v pyenv 1> /dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+  fi
 fi
 
 if [ -d "$HOME/.pgvm" ]; then
