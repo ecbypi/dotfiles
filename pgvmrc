@@ -1,0 +1,29 @@
+# vim ft=bash
+function append_ldflag_path() {
+  LDFLAGS="${LDFLAGS} -L`brew --prefix $1`/lib"
+}
+
+function append_cppflag_path() {
+  CPPFLAGS="${CPPFLAGS} -I`brew --prefix $1`/include"
+}
+
+function append_pkg_config_path() {
+  PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:`brew --prefix $1`/lib/pkgconfig"
+}
+
+append_ldflag_path "openssl"
+append_ldflag_path "readline"
+
+append_cppflag_path "openssl"
+append_cppflag_path "readline"
+
+append_pkg_config_path "icu4c"
+append_pkg_config_path "openssl"
+append_pkg_config_path "krb5"
+append_pkg_config_path "readline"
+
+export LDFLAGS
+export CPPFLAGS
+export PKG_CONFIG_PATH
+
+export CONFIG_OPTS="--disable-debug --enable-thread-safety --with-bonjour --with-gssapi --with-icu --with-libxml --with-libxslt --with-openssl --with-pam --with-perl --with-tcl --with-uuid=e2fs"
