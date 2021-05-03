@@ -309,7 +309,7 @@ inoremap jK <Esc>
 inoremap JK <Esc>
 inoremap jj <Esc>
 
-"" Typoes
+"" Typoes (typos)
 iabbrev descrbie describe
 iabbrev appliant applicant
 iabbrev appliation application
@@ -320,6 +320,8 @@ iabbrev =? =>
 iabbrev =. =>
 iabbrev reprot report
 iabbrev complicant compliant
+iabbrev bidning binding
+iabbrev contnet content
 
 "" UI
 set background=dark
