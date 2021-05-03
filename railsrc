@@ -1,6 +1,6 @@
 --skip-puma
 --skip-spring
 --skip-turbolinks
---skip-actioncable
+--skip-action-cable
 
 -d postgresql
