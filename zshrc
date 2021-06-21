@@ -56,6 +56,12 @@ source ~/.aliases
 # Put homebrew as early as possible in the path
 PATH="/usr/local/bin:$PATH"
 
+# FIXME: This drastically slows down shell initialization. Putting up with it for now because
+# it's better than relying on Homebrew to install node.
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # load rbenv if available
 if [ -d "$HOME/.rbenv" ]; then
   PATH="$HOME/.rbenv/bin:$PATH"
