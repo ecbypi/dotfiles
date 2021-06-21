@@ -12,6 +12,9 @@ alias lh='ls -Alh'
 alias g="git"
 alias gl="git log --color --graph --pretty=\"format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) %an, %ar%Creset\""
 
+## Editing
+alias vim="nvim"
+
 ## Ruby
 alias b="bundle"
 alias be="bundle exec"
