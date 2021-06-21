@@ -109,6 +109,36 @@ function tmux-init {
   fi
 }
 
+# The `m` gem doesn't work with Rails when parallel tests are enabled. When `m`'s argument
+# is a file path, a duplicate `at_exit` hook is registered causing the parallel tests runner to
+# fork again after all the tests have run. This causes an error because the DRb server is no
+# longer running at this point.
+#
+# This function is a convenience since I've learned to use `m` and want to avoid context
+# switching between `m` in non-Rails projects and `rails test` (or an alias for it) in Rails
+# projects.
+function m {
+  # TODO: Is it possible to make this work from directories within the Rails app?
+  if [ -f config/environment.rb ]; then
+    # `rails test` defaults to excluding system tests unless they are specified explicitly
+    #
+    # If the arguments are empty or equal to "test", (from habit of running `m test`), use
+    # "test/*" so all tests are run
+    if [[ -z "$@" || "test" -eq "$@" ]]; then
+      rails test test/*
+    else
+      rails test $@
+    fi
+
+  # If not in a Rails app, assume `m` is installed in through bundler
+  #
+  # TODO: Detect if `m` is in the bundle; then check if it's installed globally; then exit if
+  # nothing was found
+  else
+    bundle exec m $@
+  fi
+}
+
 typeset -U PATH
 
 export PATH
